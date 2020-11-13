@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="Kassensystem.View.EndView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Kassensystem.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1550" Background="#D2E2FC">
+
+    <UserControl.DataContext>
+        <local:KassensystemViewModel/>
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="675"/>
+            <ColumnDefinition Width="525"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="201"/>
+            <RowDefinition Height="201"/>
+            <RowDefinition Height="188"/>
+        </Grid.RowDefinitions>
+        <Image VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0" Source="C:/Users/Daniel/Desktop/Kassensystem/ZU_BEZAHLEN.png"/>
+        <Image VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Source="C:/Users/Daniel/Desktop/Kassensystem/ERHALTEN.png"/>
+        <Image VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="2" Source="C:/Users/Daniel/Desktop/Kassensystem/RUECKGELD.png"/>
+        <DockPanel Grid.Column="2" Grid.Row="0">
+            <Label Background="#D2E2FC" BorderThickness="0" Height="150" Width="350" HorizontalAlignment="Left" HorizontalContentAlignment="Right" FontSize="90" Content="{Binding GetGesamtPreis.Preis}" ContentStringFormat="0.00"/>
+            <TextBox Background="#D2E2FC" Height="150" Width="100" FontSize="100" Text=" €" HorizontalAlignment="Left" BorderThickness="0"/>
+        </DockPanel>
+        <DockPanel Grid.Column="2" Grid.Row="1">
+            <Label Background="#D2E2FC" BorderThickness="0" Height="150" Width="350" HorizontalAlignment="Left" HorizontalContentAlignment="Right" FontSize="90" Content="{Binding GetGesamtGegeben.Gegeben}" ContentStringFormat="0.00"/>
+            <TextBox Background="#D2E2FC" Height="150" Width="100" FontSize="100" Text=" €" HorizontalAlignment="Left" BorderThickness="0"/>
+        </DockPanel>
+        <DockPanel Grid.Column="2" Grid.Row="2">
+            <Label Background="#D2E2FC" BorderThickness="0" Height="150" Width="350" HorizontalAlignment="Left" HorizontalContentAlignment="Right" FontSize="90" Content="{Binding GetGesamtGegeben.Rückgeld}" ContentStringFormat="0.00"/>
+            <TextBox Background="#D2E2FC" Height="150" Width="100" FontSize="100" Text=" €" HorizontalAlignment="Left" BorderThickness="0"/>
+        </DockPanel>
+    </Grid>
+</UserControl>
