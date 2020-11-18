@@ -10,13 +10,14 @@ namespace Kassensystem.ViewModel
     {
         public GesamtGewicht()
         {
-            Gewicht = GlobaleVariablen.Gewicht;
+            Gewicht = GlobaleVariablen.Gewicht;             //Initialisierung
         }
 
-        public float Gewicht { get; private set; }
+        public float Gewicht { get; private set; }          //Deklaration
 
         public void GesamtGewichtErhöhen(float erhöhung)
         {
+            // Addition der Nachkommazahl
             if (GlobaleVariablen.tmp < 1)
             {
                 GlobaleVariablen.Gewicht += erhöhung;
@@ -24,6 +25,7 @@ namespace Kassensystem.ViewModel
             }
             else
             {
+                //Setzung der Vorkommazahl
                 GlobaleVariablen.Gewicht = erhöhung;
                 Gewicht = GlobaleVariablen.Gewicht;
             }

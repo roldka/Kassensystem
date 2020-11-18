@@ -16,7 +16,7 @@ namespace Kassensystem.ViewModel
         private GesamtGegeben _gesamtGegeben;
         private KassensystemManager _manager;
 
-        public KassensystemViewModel()
+        public KassensystemViewModel() //Initialisierung
         {
             _manager = new KassensystemManager();
 
@@ -88,7 +88,7 @@ namespace Kassensystem.ViewModel
             GetGesamtPreis = new GesamtPreis();
             GetGesamtGegeben = new GesamtGegeben();
         }
-
+        //Deklaration
         public Button Kopfsalat { get; set; }
         public Button Eichblatt { get; set; }
         public Button Romana { get; set; }
@@ -152,7 +152,8 @@ namespace Kassensystem.ViewModel
         public Zahlenfeld Neun { get; set; }
         public Zahlenfeld Komma { get; set; }
         public Zahlenfeld Zurück { get; set; }
-        
+
+        //PropertyChanged Operationen
         public GesamtPreis GetGesamtPreis
         {
             get => _gesamtPreis;
@@ -213,6 +214,7 @@ namespace Kassensystem.ViewModel
             }
         }
 
+        //Property Changed Einbindung
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]

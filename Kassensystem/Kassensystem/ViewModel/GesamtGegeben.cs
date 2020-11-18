@@ -10,22 +10,24 @@ namespace Kassensystem.ViewModel
     {
         public GesamtGegeben()
         {
-            Gegeben = GlobaleVariablen.Gegeben;
+            Gegeben = GlobaleVariablen.Gegeben;             //Initialisierung
             Rückgeld = GlobaleVariablen.Rückgeld;
         }
 
-        public float Gegeben { get; private set; }
+        public float Gegeben { get; private set; }          //Deklaration
         public float Rückgeld { get; private set; }
 
         public void GesamtGegebenErhöhen(float erhöhung)
         {
             if(GlobaleVariablen.tmp < 1)
             {
+                //Addition der Nachkommazahl
                 GlobaleVariablen.Gegeben += erhöhung;
                 Gegeben = GlobaleVariablen.Gegeben;
             }
             else
             {
+                //Setzung der Vorkommazahl
                 GlobaleVariablen.Gegeben = erhöhung;
                 Gegeben = GlobaleVariablen.Gegeben;
             }

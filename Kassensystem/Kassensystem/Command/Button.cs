@@ -8,14 +8,14 @@ namespace Kassensystem.Command
     public class Button : ICommand
     {
 
-        private readonly KassensystemViewModel _kassenSystem;
+        private readonly KassensystemViewModel _kassenSystem;                   //Instanzerzeugung
         private readonly KassensystemManager _manager;
         private readonly float _preis;
         private readonly bool _stück;
         private readonly string _name;
         public Button(KassensystemViewModel kassenSystem, KassensystemManager manager, float preis, bool stück, string name)
         {
-            _stück = stück;
+            _stück = stück;                                                     //Initialisierung
             _preis = preis;
             _kassenSystem = kassenSystem;
             _manager = manager;
@@ -29,30 +29,27 @@ namespace Kassensystem.Command
 
         public void Execute(object parameter)
         {
-            if(_preis != 0)
+            //Nur falls Preis größer 0, Produkte mit Gewicht werden nicht ohne eingegebenes Gewicht genommen
+            if(_preis > 0)
             { 
-                if (_stück == true)
+                if (_stück == true) //Produkt mit Stückzahl ausgewählt?
                 {
-                    _kassenSystem.GetGesamtPreis = _manager.GesamtPreisErhöhen(_preis);
-                    GlobaleVariablen.Einkaufsliste.Add(_name);
+                    _kassenSystem.GetGesamtPreis = _manager.GesamtPreisErhöhen(_preis);         //Zu zahlender Preis wird erhöht
+                    GlobaleVariablen.Einkaufsliste.Add(_name);                                  //Einkaufsliste wird aktuallisiert
                     GlobaleVariablen.EinkaufslistePreis.Add(_preis);
                     GlobaleVariablen.Währung.Add("€");
                 }
                 else
                 {
-                    if(GlobaleVariablen.Gewicht > 0)
+                    if(GlobaleVariablen.Gewicht > 0)    //nur wenn Gewicht größer 0
                     { 
-                        _kassenSystem.GetGesamtPreis = _manager.GesamtPreisErhöhen(_manager.GewichtAusrechnen(_preis));
-                        GlobaleVariablen.Einkaufsliste.Add(_name);
+                        _kassenSystem.GetGesamtPreis = _manager.GesamtPreisErhöhen(_manager.GewichtAusrechnen(_preis));     //Zu zahlender Preis wird erhöht
+                        GlobaleVariablen.Einkaufsliste.Add(_name);                                                          //Einkaufsliste wird aktuallisiert
                         GlobaleVariablen.EinkaufslistePreis.Add(_manager.GewichtAusrechnen(_preis));
                         GlobaleVariablen.Währung.Add("€");
-                        GlobaleVariablen.Gewicht = 0;
+                        GlobaleVariablen.Gewicht = 0;                                                                       //Gewicht wird zurückgesetzt
                     }
                 } 
-            }
-            else
-            {
-                _kassenSystem.GetGesamtPreis = _manager.GesamtPreisErhöhen(-GlobaleVariablen.AktuellerPreis);
             }
         }
 

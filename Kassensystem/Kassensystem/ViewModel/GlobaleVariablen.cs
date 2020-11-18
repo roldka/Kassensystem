@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Kassensystem.ViewModel
 {
     public static class GlobaleVariablen
-    {
+    {               //Globale Variablen
         public static float AktuellerPreis = 0;
         public static float Gewicht = 0;
         public static string GewichtString = "";

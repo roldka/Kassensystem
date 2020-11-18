@@ -10,12 +10,12 @@ namespace Kassensystem.ViewModel
     {
         public GesamtPreis()
         {
-            Preis = GlobaleVariablen.AktuellerPreis;
+            Preis = GlobaleVariablen.AktuellerPreis;        //Initialisierung
         }
 
-        public float Preis { get; private set; }
+        public float Preis { get; private set; }            //Deklaration
 
-        public void GesamtPreisErhöhen(float erhöhung)
+        public void GesamtPreisErhöhen(float erhöhung)      //ausrechnung des Gesamtpreises
         {
             GlobaleVariablen.AktuellerPreis += erhöhung;
             Preis = GlobaleVariablen.AktuellerPreis;

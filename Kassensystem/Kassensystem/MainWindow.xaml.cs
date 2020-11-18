@@ -8,7 +8,7 @@ namespace Kassensystem
     /// </summary>
     public partial class MainWindow : Window
     {
-        private bool ViewEnd = false;
+        private bool ViewEnd = false;           //Hilfsbools zur Bestimmung in welcher View man sich befindet, um Buttons entsprechend der View unterschiedlich verwenden zu können
         private bool ViewZurück = false;
         private bool ViewFertig = false;
         private bool InWaage = false;
