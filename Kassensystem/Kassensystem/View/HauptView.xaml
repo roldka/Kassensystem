@@ -22,7 +22,7 @@
         </Grid.RowDefinitions>
 
         <ScrollViewer Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Hidden">
-            <StackPanel Width="885" Height="3055">
+            <StackPanel Width="885" Height="3005">
                 <DockPanel>
                     <Button Width="200" Height="200" Margin="10" BorderThickness="0" HorizontalAlignment="Left" Command="{Binding Kopfsalat}">
                         <Image Source="C:/Users/Daniel/Desktop/Kassensystem/Kopfsalat.png"/>

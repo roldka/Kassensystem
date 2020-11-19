@@ -7,7 +7,7 @@
         xmlns:vm="clr-namespace:Kassensystem.ViewModel"
         xmlns:view="clr-namespace:Kassensystem.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1050" Width="1900" Background="#D2E2FC">
+        Title="MainWindow" Height="900" Width="1600" Background="#D2E2FC">
     <Window.DataContext>
         <local:KassensystemViewModel/>
     </Window.DataContext>

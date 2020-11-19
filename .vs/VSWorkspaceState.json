@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Kassensystem",
+    "\\Kassensystem\\Kassensystem",
+    "\\Kassensystem\\Kassensystem\\Command",
+    "\\Kassensystem\\Kassensystem\\Model",
+    "\\Kassensystem\\Kassensystem\\View",
+    "\\Kassensystem\\Kassensystem\\ViewModel"
+  ],
+  "SelectedNode": "\\Kassensystem\\Kassensystem\\MainWindow.xaml.cs",
+  "PreviewInSolutionExplorer": false
+}
